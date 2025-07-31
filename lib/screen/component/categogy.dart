@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
   const Category({this.text, this.color, this.ontap});
-  final text;
+  final  String? text;
   final Color? color;
   final VoidCallback? ontap;
   @override
@@ -10,12 +10,12 @@ class Category extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Container(
-        padding: EdgeInsets.only(left: 24),
+        padding: EdgeInsets.all(24) ,
         alignment: Alignment.centerLeft,
-        height: 65,
+        // height: 65,
         width: double.infinity,
-        child: Text(text!, style: TextStyle(fontSize: 18, color: Colors.white)),
         color: color,
+        child: Text(text??"", style: TextStyle(fontSize: 18, color: Colors.white)),
       ),
     );
   }

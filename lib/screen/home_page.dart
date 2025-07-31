@@ -13,55 +13,57 @@ class HomePage extends StatelessWidget {
         backgroundColor: Color(0xff46322B),
         title: Text('Toku', style: TextStyle(color: Colors.white)),
       ),
-      body: Column(
-        children: [
-          Category(
-            ontap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const FamilyOfPage();
-                  },
-                ),
-              );
-            },
-            text: 'Numbers',
-            color: Color(0xffEF9235),
-          ),
-          Category(
-            ontap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return FamilyOfPage();
-                  },
-                ),
-              );
-            },
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Category(
+              ontap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const FamilyOfPage();
+                    },
+                  ),
+                );
+              },
+              text: 'Numbers',
+              color: Color(0xffEF9235),
+            ),
 
-          Category(
-            text: 'Famely Numbers',
-            color: const Color.fromARGB(255, 50, 131, 52),
-          ),
+            Category(
+              text: 'Famely Numbers',
+              color: const Color.fromARGB(255, 50, 131, 52),
+              ontap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const FamilyOfPage();
+                    },
+                  ),
+                );
+              },
+            ),
 
-          Category(text: 'Colors', color: Colors.deepPurple),
-          Category(
-            ontap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return Phrasespage();
-                  },
-                ),
-              );
-            },
-          ),
-          Category(text: 'Phrases', color: Colors.lightBlue),
-        ],
+            Category(
+              text: 'Colors',
+              color: Colors.deepPurple,
+              ontap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const FamilyOfPage();
+                    },
+                  ),
+                );
+              },
+            ),
+
+            Category(text: 'Phrases', color: Colors.lightBlue),
+          ],
+        ),
       ),
     );
   }
